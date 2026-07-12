@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.table-container{
+    margin: 20px;
+    width: 600px;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+thead{
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+thead tr{
+    height: 50px;
+}
+th{
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+th:hover{
+    background: rgba(255,255,255,0.15);
+}
+th:not(:first-child)::after{
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid rgba(255,255,255,0.6);
+}
+th:not(:first-child):hover::after{
+    border-bottom-color: #fff;
+}
+tbody tr{
+    transition: all 0.25s ease;
+    height: 48px;
+}
+tbody tr:nth-child(even){
+    background: #f8f9fa;
+}
+tbody tr:nth-child(odd){
+    background: #fff;
+}
+tbody tr:hover{
+    background: #e3f2fd;
+    transform: scale(1.01);
+}
+td{
+    color: #495057;
+    font-size: 14px;
+}
+th,td{
+    border-bottom: 1px solid #e9ecef;
+    text-align: center;
+    padding: 0 16px;
+}
+tbody tr:last-child td{
+    border-bottom: none;
+}
+input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4facfe;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+input[type="checkbox"]:hover{
+    transform: scale(1.1);
+}
+input[type="checkbox"]:checked{
+    box-shadow: 0 0 8px rgba(79,172,254,0.4);
+}
